@@ -1,0 +1,40 @@
+.toast {
+  position: fixed;
+  // Keep toast above the fixed "voltar ao topo" button
+  bottom: calc(2rem + 44px + 0.9rem);
+  right: 1.5rem;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  z-index: 300;
+  animation:
+    slideIn 0.2s ease,
+    fadeOut 0.3s ease 2.7s forwards;
+}
+
+@media (max-width: 768px) {
+  .toast {
+    right: 1rem;
+    left: 1rem;
+    bottom: calc(1.5rem + 44px + 0.75rem);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}

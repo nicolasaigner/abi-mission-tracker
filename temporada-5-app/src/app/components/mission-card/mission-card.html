@@ -1,0 +1,119 @@
+<div
+  class="card"
+  [id]="mission().id"
+  [class.completed]="done()"
+  [style.--map-color]="mapColor()"
+  [attr.aria-label]="'Missão ' + mission().id + (done() ? ' concluída' : ' pendente')"
+>
+  <div class="card-top">
+    <button
+      class="check-btn"
+      [class.checked]="done()"
+      (click)="toggle()"
+      [attr.aria-label]="done() ? 'Desmarcar missão' : 'Marcar missão como concluída'"
+      type="button"
+    >
+      @if (done()) {
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path
+            d="M5 10l3.5 3.5L15 7"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      }
+    </button>
+
+    <button
+      class="card-id"
+      type="button"
+      (click)="shareMission()"
+      aria-label="Copiar link da missão"
+      title="Copiar link da missão"
+    >
+      {{ mission().id }}
+    </button>
+    @if (mission().titulo) {
+      <span class="card-title">{{ mission().titulo }}</span>
+    }
+
+    <button
+      class="detail-btn"
+      (click)="open()"
+      aria-label="Ver detalhes da missão"
+      title="Ver detalhes"
+      type="button"
+    >
+      <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5" />
+        <path
+          d="M10 9v4M10 7h.01"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+        />
+      </svg>
+    </button>
+  </div>
+
+  <ul class="objectives">
+    @for (obj of mission().objetivos; track obj; let i = $index) {
+      @let prog = objProgress()[i];
+      <li [class.obj-done]="prog?.checked">
+        <label class="obj-label">
+          <input
+            type="checkbox"
+            [checked]="prog?.checked ?? false"
+            (change)="toggleObjective($event, i)"
+            class="obj-check"
+          />
+          <span class="obj-text">{{ obj }}</span>
+        </label>
+        @if (prog && prog.target > 0) {
+          <div class="obj-counter">
+            <button class="counter-btn" type="button" (click)="decrement(i)" aria-label="Diminuir">
+              −
+            </button>
+            <input
+              type="number"
+              [value]="prog.current"
+              [max]="prog.target"
+              min="0"
+              (input)="updateCount($event, i)"
+              class="counter-input"
+            />
+            <span class="counter-target">/ {{ prog.target }}</span>
+            <button class="counter-btn" type="button" (click)="increment(i)" aria-label="Aumentar">
+              +
+            </button>
+          </div>
+        }
+      </li>
+    }
+  </ul>
+
+  <p class="dicas">{{ mission().dicas }}</p>
+
+  @if (mission().itensNecessarios; as itens) {
+    <div class="items-needed">
+      <span class="items-label">Itens:</span>
+      @for (item of itens; track item) {
+        <span class="item-chip">{{ item }}</span>
+      }
+    </div>
+  }
+
+  <div class="card-footer-tags">
+    <span class="tag tag-map" [style.background]="mapColor()">
+      {{ mission().localizacao }}
+    </span>
+    @if (mission().missaoDeEquipe) {
+      <span class="tag tag-team">Equipe</span>
+    }
+    @if (mission().recomendadoPular) {
+      <span class="tag tag-skip">Pular</span>
+    }
+  </div>
+</div>

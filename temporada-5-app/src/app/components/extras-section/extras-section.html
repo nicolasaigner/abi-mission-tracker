@@ -1,0 +1,40 @@
+<section class="extras" id="extras">
+  <h2 class="extras-title">Extras</h2>
+
+  <!-- Itens para guardar -->
+  <div class="subsection">
+    <h3 class="sub-title">Itens para Guardar</h3>
+    <h4>{{ this.extras().itensParaGuardar.descricao }}</h4>
+
+    @for (cat of categories(); track cat.categoria) {
+      <div class="item-group">
+        <h4 class="group-title">
+          {{ cat.categoria }}
+          <span class="group-meta">
+            Qtd: {{ cat.quantidade }}
+            @if (cat.qualidadeMinima) {
+              &nbsp;| Mín: <span class="quality">{{ cat.qualidadeMinima }}</span>
+            }
+          </span>
+        </h4>
+        <div class="item-chips">
+          @for (item of cat.itens; track item) {
+            <span class="chip">{{ item }}</span>
+          }
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Vale Distorcido -->
+  @if (extras().vale_distorcido; as vd) {
+    <div class="subsection">
+      <h3 class="sub-title">Vale Distorcido — Mecânicas</h3>
+      <ul class="mech-list">
+        @for (mec of vd.mecanicas; track mec) {
+          <li>{{ mec }}</li>
+        }
+      </ul>
+    </div>
+  }
+</section>

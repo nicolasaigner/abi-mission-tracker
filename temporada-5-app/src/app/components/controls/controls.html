@@ -1,0 +1,104 @@
+<section class="controls" aria-label="Filtros e ações">
+  <div class="controls-inner">
+    <!-- Search -->
+    <div class="search-wrap">
+      <svg class="search-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2" />
+        <line
+          x1="13.5"
+          y1="13.5"
+          x2="17"
+          y2="17"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </svg>
+      <input
+        type="search"
+        class="search-input"
+        placeholder="Buscar missão..."
+        [value]="searchValue"
+        (input)="onSearch($any($event.target).value)"
+        aria-label="Buscar missão"
+      />
+    </div>
+
+    <!-- Status filter -->
+    <div class="btn-group" role="group" aria-label="Filtro por status">
+      <button type="button" [class.active]="filter().status === 'all'" (click)="setStatus('all')">
+        Todas
+      </button>
+      <button
+        type="button"
+        [class.active]="filter().status === 'pending'"
+        (click)="setStatus('pending')"
+      >
+        Pendentes
+      </button>
+      <button
+        type="button"
+        [class.active]="filter().status === 'completed'"
+        (click)="setStatus('completed')"
+      >
+        Concluídas
+      </button>
+    </div>
+
+    <!-- Map filter -->
+    <select
+      class="map-select"
+      [value]="filter().map"
+      (change)="setMap($event)"
+      aria-label="Filtrar por mapa"
+    >
+      <option value="all">Todos os mapas</option>
+      @for (m of maps(); track m) {
+        <option [value]="m">{{ m }}</option>
+      }
+    </select>
+
+    <!-- Team toggle -->
+    <label class="team-check">
+      <input type="checkbox" [checked]="filter().teamOnly" (change)="toggleTeam()" />
+      <span>Apenas equipe</span>
+    </label>
+
+    <!-- Actions -->
+    <div class="actions">
+      <button
+        type="button"
+        class="btn-action btn-export"
+        (click)="exportProgress()"
+        title="Exportar progresso"
+      >
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path
+            d="M10 3v10m0 0l-3-3m3 3l3-3M4 15h12"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <span>Exportar</span>
+      </button>
+      <button
+        type="button"
+        class="btn-action btn-reset"
+        (click)="resetProgress()"
+        title="Resetar progresso"
+      >
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path
+            d="M4 4l12 12M4 16L16 4"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          />
+        </svg>
+        <span>Resetar</span>
+      </button>
+    </div>
+  </div>
+</section>

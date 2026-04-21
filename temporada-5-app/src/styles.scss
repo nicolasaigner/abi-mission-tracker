@@ -1,0 +1,81 @@
+/* === CSS Custom Properties (Dark Theme) === */
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #12121a;
+  --bg-tertiary: #1a1a26;
+  --accent-primary: #6366f1;
+  --accent-secondary: #818cf8;
+  --text-primary: #e8e8ed;
+  --text-secondary: #a0a0b0;
+  --text-muted: #606070;
+  --border-color: #1e1e2e;
+  --bg-hover: #1e1e2e;
+  --color-success: #22c55e;
+  --color-danger: #ef4444;
+
+  /* map colors */
+  --map-fazenda: #f59e0b;
+  --map-arsenal: #ef4444;
+  --map-aeroporto: #3b82f6;
+  --map-vale: #a855f7;
+  --map-tv: #14b8a6;
+  --map-northridge: #64748b;
+  --map-multiplos: #6366f1;
+  --map-todos: #e8e8ed;
+}
+
+/* === Reset & Base === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family:
+    'Inter',
+    system-ui,
+    -apple-system,
+    sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === Scrollbar === */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* === Focus visible === */
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* === Selection === */
+::selection {
+  background: color-mix(in srgb, var(--accent-primary) 35%, transparent);
+}

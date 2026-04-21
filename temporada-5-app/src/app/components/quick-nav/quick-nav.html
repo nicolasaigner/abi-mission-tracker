@@ -1,0 +1,20 @@
+@if (data(); as d) {
+  <nav class="quick-nav" aria-label="Navegação rápida">
+    @for (part of d.partes; track part.id) {
+      <button
+        type="button"
+        class="nav-pill"
+        (click)="scrollTo(part.id)"
+        [attr.aria-label]="part.nome + ': ' + svc.partDone(part) + ' de ' + svc.partTotal(part)"
+      >
+        <span class="pill-label">{{ part.nome }}</span>
+        <span class="pill-count" [class.all-done]="svc.partDone(part) === svc.partTotal(part)">
+          {{ svc.partDone(part) }}/{{ svc.partTotal(part) }}
+        </span>
+      </button>
+    }
+    <button type="button" class="nav-pill" (click)="scrollTo('extras')">
+      <span class="pill-label">Extras</span>
+    </button>
+  </nav>
+}

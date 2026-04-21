@@ -1,0 +1,21 @@
+<div class="lane" [class.lane-done]="laneCompleted()">
+  <h3 class="lane-title">{{ laneName() }}</h3>
+  <div class="lane-cards">
+    @for (m of filteredMissions(); track m.id; let i = $index) {
+      @if (i > 0) {
+        <div
+          class="connector"
+          [class.done]="svc.isCompleted(filteredMissions()[i - 1].id)"
+          aria-hidden="true"
+        ></div>
+      }
+      <app-mission-card
+        [mission]="m"
+        (openModal)="openModal.emit($event)"
+        (toastMsg)="toastMsg.emit($event)"
+      />
+    } @empty {
+      <p class="empty-lane">Nenhuma missão corresponde ao filtro.</p>
+    }
+  </div>
+</div>

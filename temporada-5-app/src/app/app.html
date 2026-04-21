@@ -1,0 +1,105 @@
+@if (svc.loading()) {
+  <div class="loading-screen">
+    <div class="spinner"></div>
+    <p>Carregando missões…</p>
+  </div>
+}
+
+@if (svc.error(); as err) {
+  <div class="error-screen">
+    <p>{{ err }}</p>
+  </div>
+}
+
+@if (svc.data(); as d) {
+  <app-header />
+
+  <app-controls (toastMsg)="showToast($event)" />
+
+  <app-quick-nav />
+
+  <main class="main-content">
+    @for (part of d.partes; track part.id) {
+      <app-mission-board
+        [part]="part"
+        (openModal)="openModal($event)"
+        (toastMsg)="showToast($event)"
+      />
+    }
+
+    @if (d.extras) {
+      <app-extras-section [extras]="d.extras" />
+    }
+  </main>
+
+  @if (modalMission(); as m) {
+    <app-mission-modal [mission]="m" (close)="closeModal()" />
+  }
+
+  @if (toastMsg(); as msg) {
+    <app-toast [message]="msg" (dismiss)="toastMsg.set('')" />
+  }
+
+  @if (showScrollBtn()) {
+    <button class="scroll-top-btn" (click)="scrollToTop()" aria-label="Voltar ao topo">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="18 15 12 9 6 15" />
+      </svg>
+    </button>
+  }
+
+  <!-- Agradecimentos -->
+  @if (d.acknowledgments; as ack) {
+    <div class="subsection">
+      <h3 class="sub-title">Agradecimentos</h3>
+      <ul class="ack-list">
+        @for (ackItem of ack; track ackItem) {
+          <li class="ack-item">
+            <h4 class="ack-name">{{ ackItem.name }}</h4>
+            <p class="ack-contributions">{{ ackItem.contributions }}</p>
+            <ul class="social-media">
+              @for (sm of ackItem.social_media; track sm) {
+                <li>
+                  <a [href]="sm.link" target="_blank" rel="noopener noreferrer">
+                    <img
+                      [src]="'/social_media/' + sm.type + '.svg'"
+                      [alt]="sm.type"
+                      class="social-icon"
+                    />
+                    {{ sm.type.replace('-light', '') }}
+                  </a>
+                </li>
+              }
+            </ul>
+          </li>
+        }
+      </ul>
+    </div>
+  }
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p class="footer-credit">Feito por <strong>Nicão</strong></p>
+    <nav class="footer-links">
+      <a href="https://github.com/nicolasaigner" target="_blank" rel="noopener noreferrer">
+        <img src="/social_media/github-light.svg" alt="GitHub" class="social-icon" />
+        nicolasaigner
+      </a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="https://twitch.tv/nnicao" target="_blank" rel="noopener noreferrer">
+        <img src="/social_media/twitch.svg" alt="Twitch" class="social-icon" />
+        nnicao
+      </a>
+    </nav>
+    <p class="footer-sub">Arena Breakout: Infinite — Temporada {{ svc.data()?.season }}</p>
+  </footer>
+}

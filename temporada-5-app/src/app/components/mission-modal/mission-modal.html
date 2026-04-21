@@ -1,0 +1,116 @@
+<div class="backdrop" (click)="onBackdrop($event)">
+  <div
+    class="modal"
+    #dialog
+    tabindex="-1"
+    role="dialog"
+    [attr.aria-label]="'Detalhes da missão ' + mission().id"
+  >
+    <header class="modal-header" [style.border-color]="mapColor()">
+      <div class="header-left">
+        <span class="modal-id">{{ mission().id }}</span>
+        <span class="modal-map" [style.background]="mapColor()">{{ mission().localizacao }}</span>
+        @if (mission().missaoDeEquipe) {
+          <span class="badge-team">Equipe</span>
+        }
+        @if (mission().recomendadoPular) {
+          <span class="badge-skip">Pular</span>
+        }
+      </div>
+      <button class="close-btn" (click)="close.emit()" aria-label="Fechar" type="button">
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path
+            d="M5 5l10 10M5 15L15 5"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </button>
+    </header>
+
+    <section class="modal-body">
+      <h3 class="section-label">Objetivos</h3>
+      <ul class="obj-list">
+        @for (obj of mission().objetivos; track obj) {
+          <li>{{ obj }}</li>
+        }
+      </ul>
+
+      <h3 class="section-label">Dicas</h3>
+      <p class="dicas">{{ mission().dicas }}</p>
+
+      @if (mission()['mapa_interativo']; as links) {
+        <div class="map-links">
+          <h3 class="section-label">Mapa Interativo</h3>
+          <ul class="link-list">
+            @for (link of links; track link; let i = $index) {
+              <li>
+                <a [href]="link" target="_blank" rel="noopener noreferrer" class="map-link">
+                  <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path
+                      d="M11 3h6v6M17 3L9 11M8 5H4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-4"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Localização {{ i + 1 }}
+                </a>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+
+      @if (mission().itensNecessarios; as itens) {
+        <h3 class="section-label">Itens Necessários</h3>
+        <div class="items-list">
+          @for (item of itens; track item) {
+            <span class="item-pill">{{ item }}</span>
+          }
+        </div>
+
+        @if (mission().images; as imgs) {
+          <h3 class="section-label">Referência de Itens</h3>
+          <div class="images-grid">
+            @for (img of imgs; track img.src) {
+              <figure class="image-item">
+                <img [src]="img.src" [alt]="img.alt" loading="lazy" (click)="openImage(img.src)" />
+                <figcaption>{{ img.alt }}</figcaption>
+              </figure>
+            }
+          </div>
+        } @else {
+          <p class="images-placeholder">
+            📷 Imagens de referência ainda não disponíveis para esta missão.
+          </p>
+        }
+      }
+
+      @if (!mission().itensNecessarios && mission().images; as imgs) {
+        <h3 class="section-label">Referência de Itens</h3>
+        <div class="images-grid">
+          @for (img of imgs; track img.src) {
+            <figure class="image-item">
+              <img [src]="img.src" [alt]="img.alt" loading="lazy" (click)="openImage(img.src)" />
+              <figcaption>{{ img.alt }}</figcaption>
+            </figure>
+          }
+        </div>
+      }
+
+      @if (mission().observacao; as obs) {
+        <h3 class="section-label">Observação</h3>
+        <p class="obs">{{ obs }}</p>
+      }
+    </section>
+
+    <footer class="modal-footer">
+      <button type="button" class="toggle-btn" [class.completed]="done()" (click)="toggle()">
+        {{ done() ? 'Desmarcar missão' : 'Marcar como concluída' }}
+      </button>
+    </footer>
+  </div>
+</div>
