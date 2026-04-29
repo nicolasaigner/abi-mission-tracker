@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ABI Mission Tracker</title>
+  <meta name="description" content="Acompanhe seu progresso nas missões de Arena Breakout: Infinite" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-card: #12121a;
+      --bg-card-hover: #1a1a26;
+      --accent: #6366f1;
+      --accent-hover: #818cf8;
+      --text-primary: #e8e8ed;
+      --text-secondary: #a0a0b0;
+      --border: #1e1e2e;
+      --border-hover: #6366f1;
+      --s4-color: #6366f1;
+      --s5-color: #22d3ee;
+    }
+
+    html, body {
+      margin: 0;
+      height: 100%;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 3.5rem 1.5rem 2rem;
+    }
+
+    .logo-title {
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin: 0 0 0.4rem;
+      background: linear-gradient(135deg, #e8e8ed 30%, var(--accent-hover));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .logo-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 800px;
+      justify-content: center;
+    }
+
+    .season-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 200ms ease, background 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .season-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 200ms ease;
+    }
+
+    .season-card.s4::before { background: radial-gradient(ellipse at top left, rgba(99,102,241,0.08) 0%, transparent 70%); }
+    .season-card.s5::before { background: radial-gradient(ellipse at top left, rgba(34,211,238,0.08) 0%, transparent 70%); }
+
+    .season-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+    }
+
+    .season-card:hover::before { opacity: 1; }
+    .season-card.s4:hover { border-color: var(--s4-color); }
+    .season-card.s5:hover { border-color: var(--s5-color); }
+
+    .season-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      margin-bottom: 1.2rem;
+      width: fit-content;
+    }
+
+    .s4 .season-badge { background: rgba(99,102,241,0.15); color: var(--s4-color); }
+    .s5 .season-badge { background: rgba(34,211,238,0.15); color: var(--s5-color); }
+
+    .season-number {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin: 0 0 0.4rem;
+    }
+
+    .season-name {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 0.8rem;
+      color: var(--text-primary);
+    }
+
+    .season-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 0 0 1.8rem;
+      flex: 1;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.55rem 1.1rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background 150ms ease, transform 150ms ease;
+      width: fit-content;
+      text-decoration: none;
+    }
+
+    .s4 .cta { background: rgba(99,102,241,0.2); color: var(--s4-color); }
+    .s5 .cta { background: rgba(34,211,238,0.2); color: var(--s5-color); }
+
+    .season-card:hover .cta { transform: translateX(3px); }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+    }
+
+    footer a { color: var(--accent-hover); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="logo-title">ABI Mission Tracker</h1>
+    <p class="logo-subtitle">Arena Breakout: Infinite — acompanhamento de missões em PT-BR</p>
+  </header>
+
+  <main>
+    <div class="cards">
+      <a href="./temporada-4/" class="season-card s4">
+        <span class="season-badge">&#x2022; Encerrada</span>
+        <div class="season-number">T4</div>
+        <div class="season-name">Caçada no Aeroporto</div>
+        <p class="season-desc">
+          60 missões principais de história. Tracker completo com mapa interativo,
+          filtros por localização e rastreamento de progresso local.
+        </p>
+        <span class="cta">Acessar temporada 4 →</span>
+      </a>
+
+      <a href="./temporada-5/" class="season-card s5">
+        <span class="season-badge">&#x25CF; Ativa</span>
+        <div class="season-number">T5</div>
+        <div class="season-name">Vale Distorcido</div>
+        <p class="season-desc">
+          Missões organizadas em trilhas por parte. Rastreamento por objetivo,
+          filtros avançados, deep-link por missão e exportação de progresso.
+        </p>
+        <span class="cta">Acessar temporada 5 →</span>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      Feito com ❤️ por <a href="https://github.com/nicolasaigner" target="_blank" rel="noopener">nicolasaigner</a>
+      &nbsp;·&nbsp;
+      Mapas: <a href="https://maps.tcno.co/abi" target="_blank" rel="noopener">maps.tcno.co/abi</a>
+    </p>
+  </footer>
+</body>
+</html>

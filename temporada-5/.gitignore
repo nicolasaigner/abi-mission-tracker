@@ -6,6 +6,11 @@
 /out-tsc
 /bazel-out
 
+# TypeScript compilation artifacts (no outDir configured)
+src/**/*.js
+src/**/*.js.map
+src/**/*.d.ts
+
 # Node
 /node_modules
 npm-debug.log
