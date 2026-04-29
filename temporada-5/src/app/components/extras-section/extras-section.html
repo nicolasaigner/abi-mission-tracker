@@ -16,7 +16,8 @@
                 [href]="'#' + part.missionId"
                 (click)="navigateToMission($event, part.missionId)"
                 title="Ir para a missão {{ part.missionId }}"
-              >{{ part.text }}</a>
+                >{{ part.text }}</a
+              >
             } @else {
               {{ part.text }}
             }
@@ -30,7 +31,21 @@
         </h4>
         <div class="item-chips">
           @for (item of cat.itens; track item) {
-            <span class="chip">{{ item }}</span>
+            @if (cat.image_ref) {
+              <button
+                class="chip chip--img"
+                type="button"
+                (click)="openImage(cat.image_ref)"
+                [title]="item"
+              >
+                {{ item }}
+                <span class="chip-preview" aria-hidden="true">
+                  <img [src]="cat.image_ref" [alt]="'Referência de ' + cat.categoria" loading="lazy" />
+                </span>
+              </button>
+            } @else {
+              <span class="chip">{{ item }}</span>
+            }
           }
         </div>
       </div>
@@ -49,3 +64,23 @@
     </div>
   }
 </section>
+
+<!-- Lightbox da imagem de categoria -->
+@if (lightboxSrc()) {
+  <div
+    class="lightbox-backdrop"
+    (click)="closeLightbox()"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Imagem de referência"
+  >
+    <div class="lightbox-content" (click)="$event.stopPropagation()">
+      <button class="lightbox-close" type="button" (click)="closeLightbox()" aria-label="Fechar">
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M5 5l10 10M5 15L15 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+      <img [src]="lightboxSrc()!" alt="Referência de itens" />
+    </div>
+  </div>
+}

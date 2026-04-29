@@ -68,6 +68,7 @@ export interface ItemCategory {
   quantidade: number;
   qualidadeMinima?: string;
   categoria: string;
+  image_ref?: string;
   itens: string[];
 }
 

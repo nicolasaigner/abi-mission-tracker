@@ -1,4 +1,4 @@
-import { Component, input, computed, ChangeDetectionStrategy } from '@angular/core';
+import { Component, input, computed, signal, ChangeDetectionStrategy } from '@angular/core';
 import { Extras, ItemCategory } from '../../models/mission.model';
 import { CommonModule } from '@angular/common';
 
@@ -17,6 +17,9 @@ interface ParsedCategory extends ItemCategory {
   styleUrl: './extras-section.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule],
+  host: {
+    '(document:keydown.escape)': 'closeLightbox()',
+  },
 })
 export class ExtrasSection {
   readonly extras = input.required<Extras>();
@@ -29,10 +32,20 @@ export class ExtrasSection {
     }));
   });
 
+  // Lightbox para imagem de categoria
+  protected readonly lightboxSrc = signal<string | null>(null);
+
+  protected openImage(imageRef: string): void {
+    this.lightboxSrc.set(imageRef);
+  }
+
+  protected closeLightbox(): void {
+    this.lightboxSrc.set(null);
+  }
+
   protected navigateToMission(event: Event, missionId: string): void {
     event.preventDefault();
     if (window.location.hash === `#${missionId}`) {
-      // Hash já está setado — dispara hashchange manualmente para o app.ts reagir
       window.dispatchEvent(new HashChangeEvent('hashchange'));
     } else {
       window.location.hash = missionId;
@@ -40,7 +53,7 @@ export class ExtrasSection {
   }
 
   private parseText(text: string): TextPart[] {
-    const match = text.match(/^([\s\S]*?)(Missão ID:\s*'([^']+)')([\s\S]*)$/);
+    const match = text.match(/^([\s\S]*?)((?:Missão|ID da Missão):\s*'([^']+)')([\s\S]*)$/);
     if (!match) return [{ text, missionId: null }];
 
     const parts: TextPart[] = [];
