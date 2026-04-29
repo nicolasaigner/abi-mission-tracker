@@ -316,7 +316,7 @@
               "recomendadoPular": false,
               "objetivos": [
                 "Elimine 3 Lobos Brancos na Estação de TV.",
-                "Recupere itens com um valor de saque de 750.000 na Zona Proibida (Forbidden Zone) (acumulado)."
+                "Recupere itens com um valor de saque de 750.000 na Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone) (acumulado)."
               ],
               "dicas": "Lobos Brancos são os scavs no corredor longo com uniforme diferente. Zona de Isolamento (Lockdown Zone) tem 2 + 1 perto da Edição, e Zona Proibida (Forbidden Zone) tem 3 no corredor e 1 na Edição."
             },
@@ -462,7 +462,7 @@
               "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
-                "Recupere itens com um valor total de 1.000.000 na Zona Proibida (Forbidden Zone) (acumulado)."
+                "Recupere itens com um valor total de 1.000.000 na Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone) (acumulado)."
               ],
               "dicas": "Continue saqueando e extraindo para atingir a meta!"
             },
@@ -478,7 +478,7 @@
                 "Dirija-se à segunda entrada designada da Área Médica no Aeroporto e coloque um marcador.",
                 "Dirija-se à terceira entrada designada da Área Médica no Aeroporto e coloque um marcador."
               ],
-              "dicas": "Pode terminar isso na Zona de Isolamento (Lockdown Zone). Os objetivos estão marcados no mapa."
+              "dicas": "Pode terminar isso na Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone). Os objetivos estão marcados no mapa."
             },
             {
               "id": "p2-l0-c4",
@@ -589,7 +589,7 @@
               "recomendadoPular": true,
               "objetivos": [
                 "Extraia com sucesso 3 vezes de Zona de Isolamento (Lockdown Zone) ou incursões de dificuldade superior.",
-                "Recupere 15 itens diversos categorizados como materiais de construção, itens de energia ou instrumentos da Zona Proibida (Forbidden Zone)."
+                "Recupere 15 itens diversos categorizados como materiais de construção, itens de energia ou instrumentos da Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone)."
               ],
               "dicas": "O segundo objetivo pode ser completado facilmente em qualquer mapa focando em caixas de ferramentas. Itens relevantes serão marcados com (!). Todas as missões desta trilha são relativamente fáceis — escolha qual pular."
             },
@@ -601,7 +601,7 @@
               "missaoDeEquipe": true,
               "recomendadoPular": false,
               "objetivos": [
-                "Investigar completamente a Estação de TV. (Progresso: +10 por contêiner revistado, +20 por inimigo eliminado, +10 por minuto de sobrevivência.)",
+                "Investigar completamente a Estação de TV. (Progresso: +10 por contêiner revistado, +20 por inimigo eliminado, +10 por minuto de sobrevivência)",
                 "Inspecionar 5 caixas de armas não revistadas na Estação de TV."
               ],
               "dicas": "Continue pesquisando e neutralizando scavs. Caixas de armas ficam geralmente nas bordas do mapa."
@@ -615,7 +615,7 @@
               "recomendadoPular": false,
               "objetivos": [
                 "Elimine 3 membros da Equipe Aniquilação em qualquer incursão.",
-                "Pegar e extrair com 2 armas primárias da Zona Proibida (Forbidden Zone)."
+                "Pegar e extrair com 2 armas primárias da Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone)."
               ],
               "dicas": "Membros da Equipe Aniquilação são os novos scavs com capuz branco encontrados principalmente no Vale Distorcido. Extraia com armas primárias de scav para completar o segundo objetivo com segurança."
             },
@@ -637,7 +637,7 @@
               "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
-                "Recupere itens com valor de saque de 1.500.000 koens da Zona Proibida (Forbidden Zone)."
+                "Recupere itens com valor de saque de 1.500.000 koens da Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone)."
               ],
               "dicas": "Continue saqueando e extraindo para acumular o valor alvo!"
             }
@@ -712,7 +712,7 @@
                 "Investigue a Casa da Fazenda Wheatfield na Fazenda. (Progresso: +10 por contêiner revistado, +20 por inimigo eliminado, +10 por minuto de sobrevivência.)",
                 "Investigue a Vila ou o Centro de Comércio de Grãos na Fazenda. (Progresso: +10 por contêiner revistado, +20 por inimigo eliminado, +10 por minuto de sobrevivência.)"
               ],
-              "dicas": "Localize objetos na Zona de Isolamento (Lockdown Zone). Para missões de investigação, continue pesquisando e neutralizando scavs."
+              "dicas": "Localize objetos na Normal Game/PVE/Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone). Para missões de investigação, continue pesquisando e neutralizando scavs."
             },
             {
               "id": "p2-l2-c5",
@@ -723,7 +723,7 @@
               "recomendadoPular": false,
               "objetivos": [
                 "Investigue a Fazenda Completamente. (Progresso: +10 por contêiner revistado, +20 por inimigo eliminado, +10 por minuto de sobrevivência.)",
-                "Recupere 15 itens diversos categorizados como inflamáveis, itens médicos ou papel da Zona Proibida (Forbidden Zone)."
+                "Recupere 15 itens diversos categorizados como inflamáveis, itens médicos ou papel da Normal Game/PVE/Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone)."
               ],
               "dicas": "Continue jogando para a investigação. Scavs e gavetas frequentemente carregam os itens — serão marcados com (!)."
             }
@@ -802,8 +802,8 @@
               "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
-                "Pegar e extrair 20 itens diversos categorizados como bens domésticos, peças de computador ou ferramentas da Zona Proibida (Forbidden Zone).",
-                "Entregue 5 bens domésticos de qualidade roxa ou superior da Zona Proibida (Forbidden Zone)."
+                "Pegar e extrair 20 itens diversos categorizados como bens domésticos, peças de computador ou ferramentas da Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone).",
+                "Entregue 5 bens domésticos de qualidade roxa ou superior da Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone)."
               ],
               "dicas": "Itens necessários serão marcados com (!). O segundo objetivo é mais fácil verificando gavetas, cofres e jaquetas.",
               "images": [
@@ -835,9 +835,9 @@
               "objetivos": [
                 "Pegar e extrair com 3 coletes à prova de balas da Zona Proibida (Forbidden Zone).",
                 "Pegar e extrair com 5 capacetes da Zona Proibida (Forbidden Zone).",
-                "Pegar e extrair com 3 fones de ouvido (exclusivos para COM1, Commander e GS2 Tactical) da Zona Proibida (Forbidden Zone)."
+                "Pegar e extrair com 3 fones de ouvido (exclusivos para COM1, Commander e GS2 Tactical) da Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone)."
               ],
-              "dicas": "Pode usar equipamento de scav para completar facilmente na Zona de Isolamento (Lockdown Zone).",
+              "dicas": "Pode usar equipamento de scav para completar facilmente na Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone).",
               "itensNecessarios": [
                 "Coletes à prova de balas (3x)",
                 "Capacetes (5x)",
@@ -865,8 +865,8 @@
               "missaoDeEquipe": false,
               "recomendadoPular": true,
               "objetivos": [
-                "Extrair e entregar 5 itens inflamáveis ou domésticos diversos de qualidade ouro ou superior da Zona Proibida (Forbidden Zone).",
-                "Entregue 30 eletrônicos retirados da Zona Proibida (Forbidden Zone).",
+                "Extrair e entregar 5 itens inflamáveis ou domésticos diversos de qualidade ouro ou superior da Normal Game/PVE/Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone).",
+                "Entregue 30 eletrônicos retirados da Normal Game/PVE/Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone).",
                 "Ganhe 1.500.000 Koen no Mercado."
               ],
               "dicas": "Para o primeiro objetivo, a missão urgente na 'Área de Carga' do Aeroporto garante um Conjunto de Chá Sofisticado. Recomendo guardar eletrônicos previamente. Se tiver pulo extra, este é um excelente lugar para usá-lo."
@@ -884,8 +884,8 @@
               "missaoDeEquipe": true,
               "recomendadoPular": false,
               "objetivos": [
-                "Procure 3 maletas médicas grandes não revistadas na Zona Proibida (Forbidden Zone).",
-                "Procure 5 contêineres não revistados, como computadores, na Zona Proibida (Forbidden Zone)."
+                "Procure 3 maletas médicas grandes não revistadas na Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone).",
+                "Procure 5 contêineres não revistados, como computadores, na Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone)."
               ],
               "dicas": "Você pode encontrar duas na biblioteca; uma no topo perto da loja e outra embaixo nos sofás."
             },
@@ -897,9 +897,9 @@
               "missaoDeEquipe": true,
               "recomendadoPular": false,
               "objetivos": [
-                "Vasculhe 6 cofres não revistados no Aeroporto (exceto cofres pequenos)."
+                "Vasculhe 6 cofres não revistados no Aeroporto (exceto cofres pequenos) na Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone)."
               ],
-              "dicas": "Pode ser facilmente completado tanto na Zona Proibida (Forbidden Zone) quanto na Zona de Isolamento (Lockdown Zone)."
+              "dicas": "Pode ser facilmente completado tanto na Zona de Isolamento (Lockdown Zone) quanto na Zona Proibida (Forbidden Zone)."
             },
             {
               "id": "p3-l1-c2",
@@ -922,8 +922,8 @@
               "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
-                "Obtenha itens com um valor de saque de 3.000.000 da Zona Proibida (Forbidden Zone) (acumulativo).",
-                "Obtenha itens com um valor de saque de 500.000 de uma única incursão na Zona Proibida (Forbidden Zone) 3 vezes."
+                "Obtenha itens com um valor de saque de 3.000.000 da Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone) (acumulativo).",
+                "Obtenha itens com um valor de saque de 500.000 de uma única incursão na Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone) 3 vezes."
               ],
               "dicas": "Continue saqueando e extraindo para acumular esse valor alto. Nunca é demais ter loot!"
             }
@@ -956,7 +956,7 @@
                 "Elimine 10 militantes ou membros da Equipe Aniquilação com um Fuzil de Assalto Famas na Fazenda.",
                 "Elimine 2 operadores (Players/Jogadores) com um Fuzil de Assalto Famas em qualquer incursão."
               ],
-              "dicas": "O Famas é uma arma poderosa — você pode encontrar builds otimizadas no ABI Builder!"
+              "dicas": "A Famas é uma arma poderosa — você pode encontrar builds otimizadas no ABI Builder!"
             },
             {
               "id": "p3-l2-c2",
@@ -1052,7 +1052,7 @@
             "missaoDeEquipe": false,
             "recomendadoPular": false,
             "objetivos": [
-              "Na Zona Proibida (Forbidden Zone), elimine 2 operadores (Players/Jogadores) nos primeiros 10 minutos da incursão. (O progresso é reiniciado em caso de tempo limite ou falha na extração.)"
+              "Na Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone), elimine 2 operadores (Players/Jogadores) nos primeiros 10 minutos da incursão. (O progresso é reiniciado em caso de tempo limite ou falha na extração.)"
             ],
             "dicas": null
           },
@@ -1063,7 +1063,7 @@
             "missaoDeEquipe": false,
             "recomendadoPular": false,
             "objetivos": [
-              "Na Zona Proibida (Forbidden Zone), elimine 4 operadores (Players/Jogadores) em uma única incursão. (O progresso é reiniciado em caso de tempo limite ou falha na extração.)"
+              "Na Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone), elimine 4 operadores (Players/Jogadores) em uma única incursão. (O progresso é reiniciado em caso de tempo limite ou falha na extração.)"
             ],
             "dicas": null
           },
@@ -1074,8 +1074,8 @@
             "missaoDeEquipe": false,
             "recomendadoPular": false,
             "objetivos": [
-              "Na Zona Proibida (Forbidden Zone), elimine 2 operadores (Players/Jogadores) com uma pistola.",
-              "Na Zona Proibida (Forbidden Zone), elimine 5 operadores (Players/Jogadores) com um rifle de ação direta."
+              "Na Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone), elimine 2 operadores (Players/Jogadores) com uma pistola.",
+              "Na Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone), elimine 5 operadores (Players/Jogadores) com um rifle de ação direta."
             ],
             "dicas": null
           }
@@ -1085,10 +1085,11 @@
   },
   "extras": {
     "itensParaGuardar": {
-      "descricao": "Itens necessários para missões futuras (ID da Missão: 'p3-l0-c7') (crédito: ACC / 4quelecarachat0)",
+      "descricao": "Itens necessários para missões futuras (crédito: ACC / 4quelecarachat0)",
       "eletronicos": {
         "quantidade": 30,
-        "categoria": "Mercado -> Variedade -> Eletrônicos",
+        "categoria": "Mercado -> Variedade -> Eletrônicos (Missão ID: 'p3-l0-c7')",
+        "image_ref": "./images/eletronicos.png",
         "itens": [
           "Fusível (Cinza/Branco)",
           "Pager (Azul)",
@@ -1114,6 +1115,7 @@
         "quantidade": 5,
         "qualidadeMinima": "Roxa",
         "categoria": "Mercado -> Variedade -> Bens Domésticos (Missão ID: 'p3-l0-c4')",
+        "image_ref": "./images/bens_domesticos_roxos_ou_superior.png",
         "itens": [
           "Carrinho de Brinquedo (Roxo)",
           "Cartucho de Jogo (Roxo)",

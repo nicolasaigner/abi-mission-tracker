@@ -26,7 +26,7 @@ export class ExtrasSection {
 
   protected readonly parsedCategories = computed<ParsedCategory[]>(() => {
     const ipg = this.extras().itensParaGuardar;
-    return [ipg.eletronicos, ipg.bensDomesticos].map(cat => ({
+    return [ipg.eletronicos, ipg.bensDomesticos].map((cat) => ({
       ...cat,
       parts: this.parseText(cat.categoria),
     }));
@@ -53,7 +53,7 @@ export class ExtrasSection {
   }
 
   private parseText(text: string): TextPart[] {
-    const match = text.match(/^([\s\S]*?)((?:Missão|ID da Missão):\s*'([^']+)')([\s\S]*)$/);
+    const match = text.match(/^([\s\S]*?)((?:Missão ID):\s*'([^']+)')([\s\S]*)$/);
     if (!match) return [{ text, missionId: null }];
 
     const parts: TextPart[] = [];
