@@ -557,10 +557,10 @@
               "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
-                "Pegar e extrair com 180 cartuchos de munição de Classe 3 ou superior da Zona Proibida (Forbidden Zone).",
-                "Pegar e extrair com 5 miras ópticas, apontadores laser ou lanternas acopladas a armas da Zona Proibida (Forbidden Zone)."
+                "Pegar e extrair com 180 cartuchos de munição de Classe 3 ou superior da Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone).",
+                "Pegar e extrair com 5 miras ópticas, apontadores laser ou lanternas acopladas a armas da Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone)."
               ],
-              "dicas": "Vá para Zona Proibida (Forbidden Zone) na Estação de TV ou Aeroporto para encontrar esses itens nos scavs facilmente."
+              "dicas": "Vá para Zona de Isolamento (Lockdown Zone) ou Zona Proibida (Forbidden Zone) na Estação de TV ou Aeroporto para encontrar esses itens nos scavs facilmente."
             }
           ]
         },
