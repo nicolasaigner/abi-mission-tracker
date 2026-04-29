@@ -1,0 +1,67 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - feature/temporada-5
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: temporada-5/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: temporada-5
+
+      - name: Build Angular (Temporada 5)
+        run: npx ng build --base-href /abi-mission-tracker/temporada-5/
+        working-directory: temporada-5
+
+      - name: Assemble site
+        run: |
+          mkdir -p _site
+          cp index.html _site/index.html
+          cp -r temporada-4/docs _site/temporada-4
+          cp -r temporada-5/dist/. _site/temporada-5
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

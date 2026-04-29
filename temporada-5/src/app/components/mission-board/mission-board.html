@@ -1,0 +1,17 @@
+<section class="board" [id]="part().id">
+  <div class="board-header">
+    <h2 class="board-title">{{ part().nome }}</h2>
+    <span class="board-count"> {{ svc.partDone(part()) }}/{{ svc.partTotal(part()) }} </span>
+  </div>
+
+  <div class="lanes-grid">
+    @for (trilha of part().trilhas; track $index; let i = $index) {
+      <app-mission-lane
+        [trilha]="trilha"
+        [laneName]="laneNames[i]"
+        (openModal)="openModal.emit($event)"
+        (toastMsg)="toastMsg.emit($event)"
+      />
+    }
+  </div>
+</section>

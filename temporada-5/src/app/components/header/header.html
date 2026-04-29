@@ -1,0 +1,42 @@
+<header class="header">
+  <div class="header-content">
+    <div class="logo">
+      <span class="logo-icon" aria-hidden="true">🎯</span>
+      <div>
+        <h1>ABI Mission Tracker</h1>
+        <span class="season-badge">Temporada 5 — 3×3 Titanium Case</span>
+      </div>
+    </div>
+    <div class="header-stats" aria-label="Progresso geral">
+      <div class="stat-pill">
+        <span class="val">{{ doneCount() }}</span>
+        <span class="lbl">/ {{ totalCount() }}</span>
+      </div>
+      <div
+        class="progress-ring-wrap"
+        role="progressbar"
+        [attr.aria-valuenow]="progressPercent()"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        [attr.aria-label]="progressPercent() + '% completo'"
+      >
+        <svg viewBox="0 0 36 36">
+          <path
+            class="progress-bg"
+            d="M18 2.0845a15.9155 15.9155 0 0 1 0 31.831a15.9155 15.9155 0 0 1 0-31.831"
+            fill="none"
+            stroke-width="3"
+          />
+          <path
+            class="progress-bar"
+            d="M18 2.0845a15.9155 15.9155 0 0 1 0 31.831a15.9155 15.9155 0 0 1 0-31.831"
+            fill="none"
+            stroke-width="3"
+            [attr.stroke-dasharray]="dashArray()"
+          />
+        </svg>
+        <span class="progress-text">{{ progressPercent() }}%</span>
+      </div>
+    </div>
+  </div>
+</header>
