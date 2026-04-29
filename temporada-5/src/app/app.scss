@@ -206,4 +206,21 @@
     color: var(--text-muted);
     margin: 0.5rem 0 0;
   }
+
+  .footer-report {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.2rem 0.6rem;
+    transition: color 150ms ease, border-color 150ms ease;
+
+    &:hover {
+      color: var(--color-danger);
+      border-color: var(--color-danger);
+    }
+  }
 }

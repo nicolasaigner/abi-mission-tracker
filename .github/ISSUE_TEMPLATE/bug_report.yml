@@ -1,0 +1,64 @@
+name: "🐛 Reportar problema"
+description: Encontrou algo errado no tracker? Missão com informação incorreta, botão quebrado, página que não abre?
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por reportar! Preencha os campos abaixo para ajudar a corrigir o problema.
+
+  - type: dropdown
+    id: temporada
+    attributes:
+      label: Qual temporada apresentou o problema?
+      options:
+        - Temporada 4 – Caçada no Aeroporto
+        - Temporada 5 – Vale Distorcido
+        - Landing page (tela inicial)
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: O que aconteceu?
+      description: Descreva o problema com o máximo de detalhes que conseguir.
+      placeholder: "Ex: A missão nº 12 aparece como concluída mesmo sem eu marcar. / A página não carrega no celular."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: O que deveria acontecer?
+      placeholder: "Ex: A missão deveria aparecer como pendente."
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: Onde você está acessando?
+      options:
+        - Computador (PC/Mac)
+        - Celular Android
+        - Celular iPhone
+        - Tablet
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Qual navegador?
+      options:
+        - Google Chrome
+        - Firefox
+        - Microsoft Edge
+        - Safari
+        - Outro
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Print ou vídeo (opcional)
+      description: Cole uma imagem ou link de vídeo mostrando o problema.
