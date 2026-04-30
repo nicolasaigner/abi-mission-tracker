@@ -4,14 +4,38 @@
     <span class="board-count"> {{ svc.partDone(part()) }}/{{ svc.partTotal(part()) }} </span>
   </div>
 
-  <div class="lanes-grid">
-    @for (trilha of part().trilhas; track $index; let i = $index) {
-      <app-mission-lane
-        [trilha]="trilha"
-        [laneName]="laneNames[i]"
-        (openModal)="openModal.emit($event)"
-        (toastMsg)="toastMsg.emit($event)"
-      />
-    }
-  </div>
+  @if (useGridLayout()) {
+    <!-- Modo grid: CSS Grid com posicionamento explícito por grid-row -->
+    <div class="lanes-grid grid-mode">
+      @for (trilha of part().trilhas; track $index; let i = $index) {
+        <h3
+          class="lane-header"
+          [class.lane-header--done]="isLaneDone(trilha)"
+          [style.grid-column]="i + 1"
+        >{{ laneNames[i] }}</h3>
+
+        @for (m of trilha.missoes; track m.id) {
+          <app-mission-card
+            [mission]="m"
+            [style.grid-column]="i + 1"
+            [style.grid-row]="(m.row ?? 0) + 2"
+            (openModal)="openModal.emit($event)"
+            (toastMsg)="toastMsg.emit($event)"
+          />
+        }
+      }
+    </div>
+  } @else {
+    <!-- Modo sequencial: MissionLane com conectores e filtros -->
+    <div class="lanes-grid">
+      @for (trilha of part().trilhas; track $index; let i = $index) {
+        <app-mission-lane
+          [trilha]="trilha"
+          [laneName]="laneNames[i]"
+          (openModal)="openModal.emit($event)"
+          (toastMsg)="toastMsg.emit($event)"
+        />
+      }
+    </div>
+  }
 </section>

@@ -42,6 +42,7 @@ export interface Mission {
   id: string;
   titulo?: string;
   coluna: number;
+  row?: number;
   localizacao: string;
   missaoDeEquipe: boolean;
   recomendadoPular: boolean;

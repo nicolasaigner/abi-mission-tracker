@@ -22,8 +22,7 @@ export class MissionLane {
     this.trilha().missoes.filter((m) => this.svc.passesFilter(m)),
   );
 
-  protected readonly laneCompleted = computed(() => {
-    const t = this.trilha();
-    return t.missoes.every((m) => this.svc.isCompleted(m.id));
-  });
+  protected readonly laneCompleted = computed(() =>
+    this.trilha().missoes.every((m) => this.svc.isCompleted(m.id)),
+  );
 }

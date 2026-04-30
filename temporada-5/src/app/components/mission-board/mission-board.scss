@@ -28,14 +28,70 @@
   border: 1px solid var(--border-color);
 }
 
+// ── Grid base (ambos os modos) ──────────────────────────────────────────────
+
 .lanes-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
 
+// ── Modo grid: posicionamento explícito por grid-row ────────────────────────
+
+.grid-mode {
+  // Linha 1 reservada para os headers das trilhas
+  // Linhas 2+ são as linhas de missões (0-indexed no JSON + 2 no CSS Grid)
+  grid-template-rows: auto;
+  grid-auto-rows: auto;
+
+  // Sem row-gap — o espaço entre cards da mesma coluna vem do padding dos cards
+  row-gap: 1rem;
+  column-gap: 1.5rem;
+
+  // Alinha cada card ao topo da sua linha (não estica)
+  align-items: start;
+
+  app-mission-card {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+// Header de cada trilha dentro do modo grid
+.lane-header {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 0.25rem 0;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--border-color);
+  grid-row: 1; // sempre na primeira linha do grid
+  align-self: end;
+
+  &--done {
+    color: var(--color-success);
+    border-bottom-color: var(--color-success);
+  }
+}
+
+// ── Responsivo ──────────────────────────────────────────────────────────────
+
 @media (max-width: 900px) {
-  .lanes-grid {
+  .lanes-grid,
+  .grid-mode {
     grid-template-columns: 1fr;
+  }
+
+  // No mobile, grid-mode fica coluna única — remove posicionamento explícito
+  .grid-mode app-mission-card {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+
+  .grid-mode .lane-header {
+    grid-column: 1 !important;
+    grid-row: auto !important;
   }
 }
