@@ -104,9 +104,7 @@
               "localizacao": "Fazenda",
               "missaoDeEquipe": false,
               "recomendadoPular": false,
-              "objetivos": [
-                "Elimine 5 militantes ou membros da Equipe Aniquilação na Fazenda."
-              ],
+              "objetivos": ["Elimine 5 militantes ou membros da Equipe Aniquilação na Fazenda."],
               "dicas": "Eliminar 5 scavs da mesma facção é o suficiente.",
               "dependencia": null,
               "row": 0
@@ -131,9 +129,7 @@
                 "https://maps.tcno.co/abi/farm?difficulty=Lockdown&marker=306&key=airdrop&cat=Airdrops&level=1F&coord=8926%2C1724",
                 "https://maps.tcno.co/abi/farm?difficulty=Lockdown&marker=14450&key=airdrops&cat=Airdrops&level=1F&coord=10597%2C3349"
               ],
-              "dependencia": [
-                "p1-l0-c0"
-              ],
+              "dependencia": ["p1-l0-c0"],
               "row": 1
             },
             {
@@ -147,9 +143,7 @@
                 "Vasculhe 20 recipientes (caixas, airdrops, containers) não pesquisados na Fazenda."
               ],
               "dicas": "Continue pesquisando e eventualmente você completará.",
-              "dependencia": [
-                "p1-l0-c1"
-              ],
+              "dependencia": ["p1-l0-c1"],
               "row": 2
             },
             {
@@ -164,9 +158,7 @@
                 "Saia da Fazenda com sucesso 1 vez."
               ],
               "dicas": "Você pode jogar Fazenda Normal para acelerar o processo.",
-              "dependencia": [
-                "p1-l0-c2"
-              ],
+              "dependencia": ["p1-l0-c2"],
               "row": 3
             },
             {
@@ -183,9 +175,7 @@
                 "Extraia com sucesso do Arsenal 1 vez."
               ],
               "dicas": "Jogue Zona de Isolamento (Lockdown Zone) e vá até os locais marcados no mapa. Depois, basta extrair.",
-              "dependencia": [
-                "p1-l0-c3"
-              ],
+              "dependencia": ["p1-l0-c3"],
               "row": 4
             },
             {
@@ -200,9 +190,7 @@
                 "Procure em 1 cofre pequeno não revistado no Arsenal."
               ],
               "dicas": "Também pode ser feito facilmente na Zona de Isolamento (Lockdown Zone). Não esqueça de levar os binóculos para a incursão.",
-              "dependencia": [
-                "p1-l0-c4"
-              ],
+              "dependencia": ["p1-l0-c4"],
               "row": 5
             },
             {
@@ -286,10 +274,7 @@
                 "Investigue completamente os Serviços do Acampamento em Northridge. (Progresso: +10 por contêiner revistado, +20 por inimigo eliminado, +10 por minuto de sobrevivência.)"
               ],
               "dicas": "Vá para a Zona de Isolamento (Lockdown Zone). Vá aos locais marcados, reviste contêineres, elimine scavs e aguarde até completar.",
-              "dependencia": [
-                "p1-l2-c3",
-                "p1-l0-c3"
-              ],
+              "dependencia": ["p1-l2-c3", "p1-l0-c3"],
               "row": 0
             },
             {
@@ -385,9 +370,7 @@
               "localizacao": "Fazenda",
               "missaoDeEquipe": false,
               "recomendadoPular": false,
-              "objetivos": [
-                "Elimine 3 operadores (Players/Jogadores) em Fazenda."
-              ],
+              "objetivos": ["Elimine 3 operadores (Players/Jogadores) em Fazenda."],
               "dicas": "Vá para a Zona de Isolamento (Lockdown Zone) para eliminações mais fáceis e jogadores bots.",
               "row": 7
             }
@@ -403,9 +386,7 @@
               "localizacao": "Vale Distorcido",
               "missaoDeEquipe": false,
               "recomendadoPular": false,
-              "objetivos": [
-                "Vasculhe 20 contêineres não pesquisados em um Vale Distorcido."
-              ],
+              "objetivos": ["Vasculhe 20 contêineres não pesquisados em um Vale Distorcido."],
               "dicas": "Apenas Vasculhe cada contêiner que encontrar.",
               "dependencia": null,
               "row": 0
@@ -423,9 +404,7 @@
                 "Vá até a Vila de Praia no Vale Distorcido e permaneça lá por 45 segundos."
               ],
               "dicas": "Vá até os locais marcados no mapa e fique dentro da zona até completar o objetivo.",
-              "dependencia": [
-                "p1-l2-c0"
-              ],
+              "dependencia": ["p1-l2-c0"],
               "row": 1
             },
             {
@@ -440,9 +419,7 @@
                 "No Vale Distorcido, acione a pesagem da Estátua da Devoção 3 vezes."
               ],
               "dicas": "Marionetes (manequins) surgem nos POIs principais e se movem na sua direção quando você não está olhando. Estátuas da Devoção são pilares cinza com balança. Interaja, adicione 1-2 devoções e pressione o botão vermelho para pesar.",
-              "dependencia": [
-                "p1-l2-c1"
-              ],
+              "dependencia": ["p1-l2-c1"],
               "row": 2
             },
             {
@@ -458,9 +435,7 @@
                 "Extração bem-sucedida do Vale Distorcido 1 vez."
               ],
               "dicas": "Use o mapa interativo ou ande pelo mapa pesquisando. Não deve ser muito difícil.",
-              "dependencia": [
-                "p1-l2-c2"
-              ],
+              "dependencia": ["p1-l2-c2"],
               "row": 3
             }
           ]
@@ -586,9 +561,7 @@
                 "Posicione 1 bloqueador de sinal na torre de sentinela da área de preparação no Arsenal."
               ],
               "dicas": "Não esqueça de levar o bloqueador de sinal para a incursão. Guardas Imperiais são os scavs encontrados dentro e ao redor das portas.",
-              "itensNecessarios": [
-                "Bloqueador de Sinal"
-              ],
+              "itensNecessarios": ["Bloqueador de Sinal"],
               "row": 7
             },
             {
@@ -604,11 +577,7 @@
                 "Atinja 3 inimigos com granadas de luz no Aeroporto ou na Estação de TV."
               ],
               "dicas": "Fazer na Estação de TV é significativamente mais fácil que no Aeroporto. Vá de Zona de Isolamento (Lockdown Zone) com bastante utilidade.",
-              "itensNecessarios": [
-                "Granadas",
-                "Coquetéis Molotov",
-                "Granadas de Luz"
-              ],
+              "itensNecessarios": ["Granadas", "Coquetéis Molotov", "Granadas de Luz"],
               "row": 8
             },
             {
@@ -693,11 +662,8 @@
               "localizacao": "Fazenda",
               "missaoDeEquipe": false,
               "recomendadoPular": false,
-              "objetivos": [
-                "Conclua 3 incursões na Fazenda.",
-                "Elimine 1 chefe na Fazenda."
-              ],
-              "dicas": "Melhor tentar no modo Normal. Procure por notificações na tela para Ajax (Motel, Área de Carga, Celeiro). Hecate surge no Centro de Comércio de Grãos e Salão Pequeno sem mensagem de spawn.",
+              "objetivos": ["Conclua 3 incursões na Fazenda.", "Elimine 1 chefe na Fazenda."],
+              "dicas": "Melhor tentar no modo Normal. Procure por notificações na tela para Ajax (Motel, Área de Carga, Celeiro, Igreja). Hecate surge no Centro de Comércio de Grãos e Salão Pequeno sem mensagem de spawn.",
               "row": 4
             },
             {
@@ -708,9 +674,9 @@
               "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
-                "Recupere itens com valor de saque de 1.500.000 koens da Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone)."
+                "Recupere itens com valor de saque de 1.500.000 koens da PVE/Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone)."
               ],
-              "dicas": "Continue saqueando e extraindo para acumular o valor alvo!",
+              "dicas": "Funciona também no modo PVE! Continue saqueando e extraindo para acumular o valor alvo!",
               "row": 6
             }
           ]
@@ -731,10 +697,7 @@
                 "Elimine 3 membros da Blackgold/Lobos Brancos/Equipe Aniquilação na Estação de TV enquanto estiverem com o status estimulado, regeneração ou aumento de força."
               ],
               "dicas": "Para o objetivo do Aeroporto, leve o item 'Molho' para desidratar instantaneamente. Para a Estação de TV, use todos os três estimulantes para garantir o requisito de status.",
-              "itensNecessarios": [
-                "Molho (para desidratação)",
-                "Estimulantes (para status)"
-              ],
+              "itensNecessarios": ["Molho (para desidratação)", "Estimulantes (para status)"],
               "row": 5
             },
             {
@@ -1101,9 +1064,7 @@
             "localizacao": "Todos",
             "missaoDeEquipe": false,
             "recomendadoPular": false,
-            "objetivos": [
-              "Obter itens com um valor de saque de 1.500.000 de uma única incursão."
-            ],
+            "objetivos": ["Obter itens com um valor de saque de 1.500.000 de uma única incursão."],
             "dicas": null
           },
           {
