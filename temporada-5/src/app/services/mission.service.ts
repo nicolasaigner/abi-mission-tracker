@@ -205,51 +205,104 @@ export class MissionService {
   }
 
   /**
-   * Importa progresso de um JSON exportado. Mescla com o progresso atual
-   * (pode mudar para sobrescrever via parâmetro). Retorna stats da operação.
+   * Importa progresso de um JSON exportado. Sobrescreve o estado atual.
+   *
+   * Hardening:
+   * - Limita tamanho do arquivo (DoS via JSON.parse).
+   * - Valida schema de cada campo (não confia em casts de tipo).
+   * - Aceita apenas mission IDs no formato `p\d+-l\d+-c\d+` (whitelist).
+   * - Coerção numérica defensiva (rejeita NaN/Infinity).
+   * - Usa Object.create(null) para evitar prototype pollution.
+   * - Limita número de chaves (cota de localStorage).
    */
   async importProgress(file: File): Promise<{ completed: number; objectives: number }> {
-    const text = await file.text();
-    const parsed: unknown = JSON.parse(text);
+    const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
+    const MAX_KEYS = 500;
+    const ID_PATTERN = /^p\d+-l\d+-c\d+$/;
 
-    if (!parsed || typeof parsed !== 'object') {
+    if (file.size > MAX_FILE_SIZE) {
+      throw new Error(
+        `Arquivo muito grande (${(file.size / 1024).toFixed(0)} KB). Máximo: ${MAX_FILE_SIZE / 1024} KB.`,
+      );
+    }
+
+    const text = await file.text();
+    let parsed: unknown;
+    try {
+      parsed = JSON.parse(text);
+    } catch {
+      throw new Error('Arquivo não é um JSON válido.');
+    }
+
+    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
       throw new Error('Arquivo inválido: estrutura JSON não reconhecida.');
     }
 
-    const data = parsed as {
-      season?: number;
-      completed?: unknown;
-      objectives?: unknown;
-    };
+    const data = parsed as Record<string, unknown>;
 
-    if (data.season !== undefined && data.season !== 5) {
-      throw new Error(`Arquivo é da temporada ${data.season}, esperado temporada 5.`);
+    if (data['season'] !== undefined && data['season'] !== 5) {
+      throw new Error(`Arquivo é da temporada ${data['season']}, esperado temporada 5.`);
     }
 
-    // Validação e parsing de completed
-    if (!Array.isArray(data.completed)) {
+    // ── completed: array de strings com formato válido ──────────────────
+    if (!Array.isArray(data['completed'])) {
       throw new Error('Arquivo inválido: campo "completed" ausente ou inválido.');
     }
-    const completedArr = data.completed.filter((v): v is string => typeof v === 'string');
+    const sanitizedCompleted = (data['completed'] as unknown[])
+      .filter((v): v is string => typeof v === 'string' && ID_PATTERN.test(v))
+      .slice(0, MAX_KEYS);
 
-    // Validação de objectives
-    if (
-      !data.objectives ||
-      typeof data.objectives !== 'object' ||
-      Array.isArray(data.objectives)
-    ) {
+    // ── objectives: chaves whitelist + valores com schema estrito ───────
+    const objRaw = data['objectives'];
+    if (!objRaw || typeof objRaw !== 'object' || Array.isArray(objRaw)) {
       throw new Error('Arquivo inválido: campo "objectives" ausente ou inválido.');
     }
-    const objectivesObj = data.objectives as Record<string, ObjectiveProgress[]>;
 
-    this.completedIds.set(new Set(completedArr));
-    this.objectiveProgress.set(objectivesObj);
+    // Object.create(null) evita prototype pollution
+    const sanitizedObjectives: Record<string, ObjectiveProgress[]> = Object.create(null);
+    const rawObj = objRaw as Record<string, unknown>;
+    const keys = Object.keys(rawObj);
+
+    if (keys.length > MAX_KEYS) {
+      throw new Error(`Demasiadas entradas em "objectives" (${keys.length}). Máximo: ${MAX_KEYS}.`);
+    }
+
+    for (const key of keys) {
+      // Bloqueia chaves perigosas e qualquer coisa fora do formato esperado
+      if (key === '__proto__' || key === 'constructor' || key === 'prototype') continue;
+      if (!ID_PATTERN.test(key)) continue;
+
+      const value = rawObj[key];
+      if (!Array.isArray(value)) continue;
+
+      const sanitizedArr: ObjectiveProgress[] = value.map((entry) => {
+        const e = entry as Record<string, unknown> | null;
+        const checked = typeof e?.['checked'] === 'boolean' ? (e['checked'] as boolean) : false;
+        const currentRaw = e?.['current'];
+        const targetRaw = e?.['target'];
+        const current =
+          typeof currentRaw === 'number' && Number.isFinite(currentRaw)
+            ? Math.max(0, Math.floor(currentRaw))
+            : 0;
+        const target =
+          typeof targetRaw === 'number' && Number.isFinite(targetRaw)
+            ? Math.max(0, Math.floor(targetRaw))
+            : 0;
+        return { checked, current, target };
+      });
+
+      sanitizedObjectives[key] = sanitizedArr;
+    }
+
+    // ── Aplica estado e persiste ────────────────────────────────────────
+    this.completedIds.set(new Set(sanitizedCompleted));
+    this.objectiveProgress.set(sanitizedObjectives);
     this.saveToStorage();
     this.saveObjectivesToStorage();
 
     return {
-      completed: completedArr.length,
-      objectives: Object.keys(objectivesObj).length,
+      completed: sanitizedCompleted.length,
+      objectives: Object.keys(sanitizedObjectives).length,
     };
   }
 
