@@ -83,6 +83,26 @@
         </svg>
         <span>Exportar</span>
       </button>
+
+      <label class="btn-action btn-import" title="Importar progresso de um arquivo JSON">
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path
+            d="M10 13V3m0 0l-3 3m3-3l3 3M4 15h12"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <span>Importar</span>
+        <input
+          type="file"
+          accept="application/json,.json"
+          (change)="onImportFile($event)"
+          hidden
+        />
+      </label>
+
       <button
         type="button"
         class="btn-action btn-reset"

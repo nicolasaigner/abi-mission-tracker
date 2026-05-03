@@ -43,6 +43,31 @@ export class Controls {
     this.toastMsg.emit('Progresso exportado!');
   }
 
+  protected async onImportFile(event: Event): Promise<void> {
+    const input = event.target as HTMLInputElement;
+    const file = input.files?.[0];
+    if (!file) return;
+
+    const confirmMsg =
+      'Importar progresso vai substituir todo o progresso atual. Continuar?';
+    if (!confirm(confirmMsg)) {
+      input.value = '';
+      return;
+    }
+
+    try {
+      const stats = await this.svc.importProgress(file);
+      this.toastMsg.emit(
+        `Progresso importado: ${stats.completed} missões e ${stats.objectives} objetivos.`,
+      );
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : 'erro desconhecido';
+      this.toastMsg.emit(`Falha ao importar: ${msg}`);
+    } finally {
+      input.value = ''; // permite re-selecionar o mesmo arquivo
+    }
+  }
+
   protected resetProgress(): void {
     if (confirm('Tem certeza que deseja resetar todo o progresso?')) {
       this.svc.resetProgress();

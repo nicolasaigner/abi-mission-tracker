@@ -66,22 +66,15 @@ export class MissionCard {
   }
 
   protected async shareMission(): Promise<void> {
-    const humanRef = this.toHumanRef(this.mission().id);
-    const url = `${window.location.origin}${window.location.pathname}#${humanRef}`;
+    const id = this.mission().id;
+    const url = `${window.location.origin}${window.location.pathname}#${id}`;
     const ok = await this.copyToClipboard(url);
     if (ok) {
-      this.toastMsg.emit(`Link da missão copiado: #${humanRef}`);
+      this.toastMsg.emit(`Link da missão copiado: #${id}`);
       return;
     }
 
-    this.toastMsg.emit(`Não foi possível copiar automaticamente. ID da missão: ${humanRef}`);
-  }
-
-  private toHumanRef(id: string): string {
-    const match = id.match(/^p(\d+)-l(\d+)-c(\d+)$/);
-    if (!match) return id;
-    const [, part, line, col] = match;
-    return `p${part}-l${Number(line) + 1}-m${Number(col) + 1}`;
+    this.toastMsg.emit(`Não foi possível copiar automaticamente. ID da missão: ${id}`);
   }
 
   private async copyToClipboard(text: string): Promise<boolean> {

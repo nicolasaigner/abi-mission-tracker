@@ -204,6 +204,55 @@ export class MissionService {
     URL.revokeObjectURL(url);
   }
 
+  /**
+   * Importa progresso de um JSON exportado. Mescla com o progresso atual
+   * (pode mudar para sobrescrever via parâmetro). Retorna stats da operação.
+   */
+  async importProgress(file: File): Promise<{ completed: number; objectives: number }> {
+    const text = await file.text();
+    const parsed: unknown = JSON.parse(text);
+
+    if (!parsed || typeof parsed !== 'object') {
+      throw new Error('Arquivo inválido: estrutura JSON não reconhecida.');
+    }
+
+    const data = parsed as {
+      season?: number;
+      completed?: unknown;
+      objectives?: unknown;
+    };
+
+    if (data.season !== undefined && data.season !== 5) {
+      throw new Error(`Arquivo é da temporada ${data.season}, esperado temporada 5.`);
+    }
+
+    // Validação e parsing de completed
+    if (!Array.isArray(data.completed)) {
+      throw new Error('Arquivo inválido: campo "completed" ausente ou inválido.');
+    }
+    const completedArr = data.completed.filter((v): v is string => typeof v === 'string');
+
+    // Validação de objectives
+    if (
+      !data.objectives ||
+      typeof data.objectives !== 'object' ||
+      Array.isArray(data.objectives)
+    ) {
+      throw new Error('Arquivo inválido: campo "objectives" ausente ou inválido.');
+    }
+    const objectivesObj = data.objectives as Record<string, ObjectiveProgress[]>;
+
+    this.completedIds.set(new Set(completedArr));
+    this.objectiveProgress.set(objectivesObj);
+    this.saveToStorage();
+    this.saveObjectivesToStorage();
+
+    return {
+      completed: completedArr.length,
+      objectives: Object.keys(objectivesObj).length,
+    };
+  }
+
   // ── Objective-level tracking ──────────────────────────────────
 
   getObjectiveProgress(missionId: string): ObjectiveProgress[] {
