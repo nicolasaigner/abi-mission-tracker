@@ -116,7 +116,7 @@
               "titulo": "A Falha",
               "coluna": 1,
               "localizacao": "Fazenda",
-              "missaoDeEquipe": true,
+              "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
                 "Vasculhe 3 contêineres de carga aérea (airdrops) não revistados em Fazenda.",
@@ -193,7 +193,7 @@
               "titulo": "Disfarce Perfeito",
               "coluna": 5,
               "localizacao": "Arsenal",
-              "missaoDeEquipe": true,
+              "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
                 "Leve os binóculos com telêmetro até a estação de radar no Arsenal e explore a área dentro dos muros do Arsenal.",
@@ -297,7 +297,7 @@
               "titulo": "Semelhantes",
               "coluna": 1,
               "localizacao": "Vale Distorcido",
-              "missaoDeEquipe": true,
+              "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
                 "No Vale Distorcido, entre em ressonância com 3 Orbes de Eco.",
@@ -311,7 +311,7 @@
               "titulo": "Operação de Limpeza",
               "coluna": 2,
               "localizacao": "Northridge",
-              "missaoDeEquipe": true,
+              "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
                 "Investigue o quarto designado no Edifício B ou D do Hotel Northridge em Northridge.",
@@ -341,7 +341,7 @@
               "titulo": "Uma Sensação de Fama",
               "coluna": 4,
               "localizacao": "Estação de TV",
-              "missaoDeEquipe": true,
+              "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
                 "Elimine 3 Lobos Brancos na Estação de TV.",
@@ -383,7 +383,7 @@
               "titulo": "Intuição",
               "coluna": 7,
               "localizacao": "Fazenda",
-              "missaoDeEquipe": true,
+              "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
                 "Elimine 3 operadores (Players/Jogadores) em Fazenda."
@@ -433,7 +433,7 @@
               "titulo": "Nuvens de Suspeita",
               "coluna": 2,
               "localizacao": "Vale Distorcido",
-              "missaoDeEquipe": true,
+              "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
                 "Destrua 5 Marionetes no Vale Distorcido.",
@@ -450,7 +450,7 @@
               "titulo": "Outro Lado?",
               "coluna": 3,
               "localizacao": "Vale Distorcido",
-              "missaoDeEquipe": true,
+              "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
                 "Procurar 5 mochilas de ginástica não revistadas no Vale Distorcido.",
@@ -536,7 +536,7 @@
               "titulo": "A Vingança",
               "coluna": 4,
               "localizacao": "Aeroporto",
-              "missaoDeEquipe": true,
+              "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
                 "Eliminar 10 Lobos Brancos dentro da Área de Controle no Aeroporto.",
@@ -596,7 +596,7 @@
               "titulo": "Ruptura de Linhas",
               "coluna": 8,
               "localizacao": "Múltiplos",
-              "missaoDeEquipe": true,
+              "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
                 "Elimine 3 membros da Blackgold/Lobos Brancos/Equipe Aniquilação com granadas no Aeroporto ou na Estação de TV.",
@@ -663,7 +663,7 @@
               "titulo": "Confirmação de Invasão",
               "coluna": 2,
               "localizacao": "Estação de TV",
-              "missaoDeEquipe": true,
+              "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
                 "Investigar completamente a Estação de TV. (Progresso: +10 por contêiner revistado, +20 por inimigo eliminado, +10 por minuto de sobrevivência)",
@@ -677,7 +677,7 @@
               "titulo": "Pressão Aliviada",
               "coluna": 3,
               "localizacao": "Todos",
-              "missaoDeEquipe": true,
+              "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
                 "Elimine 3 membros da Equipe Aniquilação em qualquer incursão.",
@@ -691,7 +691,7 @@
               "titulo": "Falsa Fuga",
               "coluna": 4,
               "localizacao": "Fazenda",
-              "missaoDeEquipe": true,
+              "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
                 "Conclua 3 incursões na Fazenda.",
@@ -722,7 +722,7 @@
               "id": "p2-l2-c0",
               "titulo": "Resposta Ofensiva",
               "coluna": 0,
-              "localizacao": "Estação de TV",
+              "localizacao": "Múltiplos",
               "missaoDeEquipe": false,
               "recomendadoPular": false,
               "observacao": "Parte 2 com bug ao ser executada em 03/04 — necessário pular.",
@@ -784,7 +784,7 @@
               "titulo": "Informações Críticas",
               "coluna": 4,
               "localizacao": "Fazenda",
-              "missaoDeEquipe": true,
+              "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
                 "Elimine 5 operadores (Players/Jogadores) na Fazenda.",
@@ -824,7 +824,7 @@
               "titulo": "Escolha",
               "coluna": 0,
               "localizacao": "Estação de TV",
-              "missaoDeEquipe": true,
+              "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
                 "Complete 3 missões na Estação de TV.",
@@ -838,7 +838,7 @@
               "titulo": "Confronto Predestinado",
               "coluna": 1,
               "localizacao": "Aeroporto",
-              "missaoDeEquipe": true,
+              "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
                 "Eliminar ou ajudar a eliminar um total de 5 operadores (Players/Jogadores) no Aeroporto.",
@@ -852,7 +852,7 @@
               "titulo": "O Perturbador",
               "coluna": 2,
               "localizacao": "Arsenal",
-              "missaoDeEquipe": true,
+              "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
                 "Vasculhe 4 computadores militares não revistados no interior do Arsenal.",
@@ -936,7 +936,7 @@
               "titulo": "Divisão de Tarefas",
               "coluna": 6,
               "localizacao": "Estação de TV",
-              "missaoDeEquipe": true,
+              "missaoDeEquipe": false,
               "recomendadoPular": true,
               "objetivos": [
                 "Elimine 10 membros dos Blackgold (Ouro Preto) ou dos White Wolfs (Lobos Brancos) com um Rifle de Assalto Curto T192 na Estação de TV.",
@@ -970,7 +970,7 @@
               "titulo": "A Aparição do Apóstolo",
               "coluna": 0,
               "localizacao": "Todos",
-              "missaoDeEquipe": true,
+              "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
                 "Procure 3 maletas médicas grandes não revistadas na Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone).",
@@ -984,7 +984,7 @@
               "titulo": "Táticas de Atraso",
               "coluna": 1,
               "localizacao": "Aeroporto",
-              "missaoDeEquipe": true,
+              "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
                 "Vasculhe 6 cofres não revistados no Aeroporto (exceto cofres pequenos) na Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone)."
@@ -997,7 +997,7 @@
               "titulo": "A Isca",
               "coluna": 2,
               "localizacao": "Arsenal",
-              "missaoDeEquipe": true,
+              "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
                 "Elimine ou ajude a eliminar um total de 5 operadores (Players/Jogadores) no Arsenal.",
@@ -1030,7 +1030,7 @@
               "titulo": "Interceptação Tática",
               "coluna": 0,
               "localizacao": "Múltiplos",
-              "missaoDeEquipe": true,
+              "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
                 "Em Zona de Isolamento (Lockdown Zone) ou Zona Proibida (Forbidden Zone), elimine 15 militantes ou membros da Equipe Aniquilação em qualquer mapa que não seja a Fazenda.",
@@ -1044,7 +1044,7 @@
               "titulo": "Entrega Especial",
               "coluna": 1,
               "localizacao": "Múltiplos",
-              "missaoDeEquipe": true,
+              "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
                 "Elimine 10 militantes ou membros da Equipe Aniquilação com um Fuzil de Assalto Famas na Fazenda.",
