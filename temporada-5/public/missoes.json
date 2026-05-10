@@ -542,10 +542,10 @@
               "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
-                "Extração realizada com sucesso da Estação de TV (1 tentativa).",
-                "Extração realizada com sucesso do Aeroporto (1 tentativa)."
+                "Escape de Estação de TV com sucesso 1 vez.",
+                "Escape de Aeroporto com sucesso 1 vez."
               ],
-              "dicas": "Pode jogar na Zona de Isolamento (Lockdown Zone) como de costume.",
+              "dicas": "Pode jogar na Zona de Isolamento (Lockdown Zone) como de costume. É bem fácil essa, geralmente aparece as extrações aleatórias no mapa que pode vir uma coisa simples de fazer. Evite confrontos se você quiser terminar rápido essa missão.",
               "row": 6
             },
             {
@@ -554,7 +554,7 @@
               "coluna": 7,
               "localizacao": "Arsenal",
               "missaoDeEquipe": false,
-              "recomendadoPular": false,
+              "recomendadoPular": true,
               "objetivos": [
                 "Leve Inibidor de Sinal para Arsenal.",
                 "Elimine 10 membro(s) do Corpo de Guarda em Arsenal enquanto carrega Inibidor de Sinal.",
@@ -576,7 +576,7 @@
               "coluna": 8,
               "localizacao": "Múltiplos",
               "missaoDeEquipe": false,
-              "recomendadoPular": false,
+              "recomendadoPular": true,
               "objetivos": [
                 "Elimine 3 membros da Blackgold/Lobos Brancos/Equipe Aniquilação com granadas no Aeroporto ou na Estação de TV.",
                 "Elimine 3 membros da Blackgold/Lobos Brancos/Equipe Aniquilação com coquetéis Molotov no Aeroporto ou na Estação de TV.",
@@ -767,14 +767,14 @@
               "id": "p2-l2-c5",
               "titulo": "A Carga",
               "coluna": 5,
-              "localizacao": "Fazenda",
+              "localizacao": "Múltiplos",
               "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
-                "Investigue a Fazenda Completamente. (Progresso: +10 por contêiner revistado, +20 por inimigo eliminado, +10 por minuto de sobrevivência.)",
-                "Recupere 15 itens diversos categorizados como inflamáveis, itens médicos ou papel da Normal Game/PVE/Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone)."
+                "Investigue completamente a Fazenda. (Progresso: +10 por cada recipente vasculhado, +20 para cada inimigo eliminado e +10 por cada minuto de sobrevivência)",
+                "Recupere 15 itens diversos categorizados como inflamáveis, itens médicos ou papel da Normal Game/PVE/Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone). Pode ser feita em qualquer mapa."
               ],
-              "dicas": "Continue jogando para a investigação. Scavs e gavetas frequentemente carregam os itens — serão marcados com (!).",
+              "dicas": "Continue jogando para a investigação. Scavs e gavetas frequentemente carregam os itens — serão marcados com (!). Se conseguir fazer tudo direto na Fazenda, melhor ainda, mas completando o primeiro objetivo e indo para qualquer outro mapa para o segundo objetivo funciona também.",
               "row": 10
             }
           ]
