@@ -104,7 +104,9 @@
               "localizacao": "Fazenda",
               "missaoDeEquipe": false,
               "recomendadoPular": false,
-              "objetivos": ["Elimine 5 militantes ou membros da Equipe Aniquilação na Fazenda."],
+              "objetivos": [
+                "Elimine 5 militantes ou membro(s) da Equipe Aniquilação (Scavs novos, com capuz branco) na Fazenda."
+              ],
               "dicas": "Eliminar 5 scavs da mesma facção é o suficiente.",
               "dependencia": null,
               "row": 0
@@ -231,7 +233,7 @@
               "recomendadoPular": false,
               "objetivos": [
                 "Conclua 3 missões urgentes em Northridge.",
-                "Elimine 8 militantes ou membros da Equipe Aniquilação em Northridge."
+                "Elimine 8 militantes ou membro(s) da Equipe Aniquilação (Scavs novos, com capuz branco) em Northridge."
               ],
               "dicas": "Novamente, facilmente feito na Zona de Isolamento (Lockdown Zone).",
               "row": 8
@@ -301,7 +303,7 @@
               "objetivos": [
                 "Investigue o quarto designado no Edifício B ou D do Hotel Northridge em Northridge.",
                 "Investigue a janela no Edifício C do Hotel Northridge em Northridge.",
-                "Elimine 5 militantes ou membros da Equipe Aniquilação no Hotel Northridge ou na Estação do Teleférico em Northridge."
+                "Elimine 5 militantes ou membro(s) da Equipe Aniquilação (Scavs novos, com capuz branco) no Hotel Northridge ou na Estação do Teleférico em Northridge."
               ],
               "dicas": "Interaja com os quartos marcados no mapa do Hotel. Cuidado ao entrar no Hotel — é uma área principal de PVP.",
               "row": 2
@@ -655,10 +657,10 @@
               "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
-                "Elimine 3 membros da Equipe Aniquilação em qualquer incursão.",
+                "Elimine 3 membro(s) da Equipe Aniquilação (Scavs novos, com capuz branco) em qualquer incursão.",
                 "Pegar e extrair com 2 armas primárias da Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone)."
               ],
-              "dicas": "Membros da Equipe Aniquilação são os novos scavs com capuz branco encontrados principalmente no Vale Distorcido. Extraia com armas primárias de scav para completar o segundo objetivo com segurança.",
+              "dicas": "Extraia com armas primárias de scav para completar o segundo objetivo com segurança.",
               "row": 3
             },
             {
@@ -1002,10 +1004,10 @@
               "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
-                "Em Zona de Isolamento (Lockdown Zone) ou Zona Proibida (Forbidden Zone), elimine 15 militantes ou membros da Equipe Aniquilação em qualquer mapa que não seja a Fazenda.",
+                "Em Zona de Isolamento (Lockdown Zone) ou Zona Proibida (Forbidden Zone), elimine 15 combatente(s) ou membro(s) da Equipe Aniquilação (Scavs novos, com capuz branco) em qualquer mapa que não seja a Fazenda (como Vale, Vale Distorcido, ou Northridge).",
                 "Em Zona de Isolamento (Lockdown Zone) ou Zona Proibida (Forbidden Zone), procure em 10 contêineres de roupas não revistados em qualquer mapa."
               ],
-              "dicas": "Escolha qualquer mapa que preferir para eliminar scavs. O mesmo vale para contêineres de roupas.",
+              "dicas": "Escolha qualquer mapa (menos Fazenda para primera etapa) que preferir para eliminar scavs. O mesmo vale para contêineres de roupas. Eu (Nicão), tentei fazer na TV, mesmo matando bastante scav que não seja dos novos não funcionou para o primeiro objetivo.",
               "row": 0
             },
             {
@@ -1016,7 +1018,7 @@
               "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
-                "Elimine 10 militantes ou membros da Equipe Aniquilação com um Fuzil de Assalto Famas na Fazenda.",
+                "Elimine 10 militantes ou membro(s) da Equipe Aniquilação (Scavs novos, com capuz branco) com um Fuzil de Assalto Famas na Fazenda.",
                 "Elimine 2 operadores (Players/Jogadores) com um Fuzil de Assalto Famas em qualquer incursão."
               ],
               "dicas": "A Famas é uma arma poderosa — você pode encontrar builds otimizadas no ABI Builder!",
