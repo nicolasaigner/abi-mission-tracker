@@ -556,12 +556,18 @@
               "missaoDeEquipe": false,
               "recomendadoPular": false,
               "objetivos": [
-                "Leve um bloqueador de sinal para o Arsenal.",
-                "Elimine 10 membros da Guarda Imperial no Arsenal enquanto estiver carregando um bloqueador de sinal.",
-                "Posicione 1 bloqueador de sinal na torre de sentinela da área de preparação no Arsenal."
+                "Leve Inibidor de Sinal para Arsenal.",
+                "Elimine 10 membro(s) do Corpo de Guarda em Arsenal enquanto carrega Inibidor de Sinal.",
+                "Posicione 1 Inibidor de Sinal na torre de sentinela da área de preparação no Arsenal."
               ],
-              "dicas": "Não esqueça de levar o bloqueador de sinal para a incursão. Guardas Imperiais são os scavs encontrados dentro e ao redor das portas.",
-              "itensNecessarios": ["Bloqueador de Sinal"],
+              "dicas": "Não esqueça de levar o Inibidor de Sinal para a incursão. Guardas Imperiais são os scavs encontrados dentro e ao redor das portas.",
+              "itensNecessarios": ["Inibidor de Sinal"],
+              "images": [
+                {
+                  "src": "./images/inibidor_de_sinal.png",
+                  "alt": "Imagem do Inibidor de Sinal que é para levar para a missão"
+                }
+              ],
               "row": 7
             },
             {
