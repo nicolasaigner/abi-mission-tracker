@@ -848,6 +848,16 @@
                 "Tanque de Propano",
                 "Dispositivo de Comunicação Individual T-147"
               ],
+              "images": [
+                {
+                  "src": "./images/dispositivo_de_comunicacao_individual_t147.png",
+                  "alt": "Dispositivo de Comunicação T-147"
+                },
+                {
+                  "src": "./images/tanque_de_propano.png",
+                  "alt": "Tanque de Propano"
+                }
+              ],
               "row": 4
             },
             {
