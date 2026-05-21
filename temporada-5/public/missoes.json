@@ -871,7 +871,7 @@
                 "Pegar e extrair 20 itens diversos categorizados como bens domésticos, peças de computador ou ferramentas da Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone).",
                 "Entregue 5 bens domésticos de qualidade roxa ou superior da Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone)."
               ],
-              "dicas": "Itens necessários serão marcados com (!). O segundo objetivo é mais fácil verificando gavetas, cofres e jaquetas.",
+              "dicas": "O segundo objetivo (5 itens roxo || >) se você guardou, você pode entregar, mas é mais fácil verificando gavetas, cofres e jaquetas. Já para o primeiro, você precisa realmente entrar no mapa e coletar e extrair. Os itens necessários serão marcados com (!).",
               "images": [
                 {
                   "src": "./images/acessorios_de_computador.png",
