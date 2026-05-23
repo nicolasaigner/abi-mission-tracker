@@ -894,7 +894,7 @@
             },
             {
               "id": "p3-l0-c5",
-              "titulo": "O Corvo Rompe a Re...",
+              "titulo": "O Corvo Rompe a Rede",
               "coluna": 5,
               "localizacao": "Todos",
               "missaoDeEquipe": false,
@@ -904,7 +904,7 @@
                 "Pegar e extrair com 5 capacetes da Zona Proibida (Forbidden Zone).",
                 "Pegar e extrair com 3 fones de ouvido (exclusivos para COM1, Commander e GS2 Tactical) da Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone)."
               ],
-              "dicas": "Pode usar equipamento de scav para completar facilmente na Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone).",
+              "dicas": "Pode usar equipamento de scav para completar facilmente na Normal Game/Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone).",
               "itensNecessarios": [
                 "Coletes à prova de balas (3x)",
                 "Capacetes (5x)",
