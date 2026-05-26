@@ -923,8 +923,12 @@
                 "Elimine 10 membros dos Blackgold (Ouro Preto) ou dos White Wolfs (Lobos Brancos) com um Rifle de Assalto Curto T192 na Estação de TV.",
                 "Pegar e extrair com 5 eletrônicos roxos ou de qualidade superior na Estação de TV."
               ],
-              "dicas": "A menos que queira se desafiar, pule esta para sua sanidade.",
-              "row": 7
+              "dicas": "A menos que queira se desafiar, pule esta para sua sanidade. Mas é tranquilo a primeira parte, só matar qualquer Scav da TV. A segunda, precisa achar ítens roxo, e as vezes é difícil achar.",
+              "row": 7,
+              "images": {
+                "src": "./images/eletronicos.png",
+                "alt": "Todos os itens da categoria de 'Eletrônicos' (objetivo 2)"
+              }
             },
             {
               "id": "p3-l0-c7",
@@ -938,8 +942,22 @@
                 "Entregue 30 eletrônicos retirados da Normal Game/PVE/Zona de Isolamento (Lockdown Zone)/Zona Proibida (Forbidden Zone).",
                 "Ganhe 1.500.000 Koen no Mercado."
               ],
-              "dicas": "Para o primeiro objetivo, a missão urgente na 'Área de Carga' do Aeroporto garante um Conjunto de Chá Sofisticado. Recomendo guardar eletrônicos previamente. Se tiver pulo extra, este é um excelente lugar para usá-lo.",
-              "row": 8
+              "dicas": "Para o primeiro objetivo, a missão urgente na 'Área de Carga' do Aeroporto garante um Conjunto de Chá Sofisticado. Para o primeiro objetivo, você precisa entrar na raid, não tem como entregar os que você já tem guardado. Para o segundo objetivo, você já pode entregar caso já tenha os eletrônicos (pode ser qualquer nível). O terceiro é fácil, coloca o que você não usa no mercado, ele vai acumular os valores vendidos. Se tiver pulo extra, este é um excelente lugar para usá-lo.",
+              "row": 8,
+              "images": [
+                {
+                  "src": "./images/bens_domesticos_ouro_ou_superior.png",
+                  "alt": "Todos os itens da categoria de 'Bens Domésticos' com destaque para os nível 'Ouro' ou 'Superior' (objetivo 1)"
+                },
+                {
+                  "src": "./images/inflamaveis_ouro_superior.png",
+                  "alt": "Todos os itens da categoria de 'Inflamáveis' com destaque para os nível 'Ouro' ou 'Superior' (objetivo 1)"
+                },
+                {
+                  "src": "./images/eletronicos.png",
+                  "alt": "Todos os itens da categoria de 'Eletrônicos' (objetivo 2)"
+                }
+              ]
             }
           ]
         },
